@@ -10,4 +10,11 @@
         android:layout_height="match_parent"
         android:text="Near" />
 
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginRight="@dimen/fab_margin"
+        android:layout_marginBottom="56dip"
+        android:elevation="@dimen/fab_margin" />
 </FrameLayout>
