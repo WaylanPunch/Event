@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <item
-        android:id="@+id/nav_find"
-        android:checked="true"
-        android:icon="@drawable/ic_menu_camera"
-        android:title="@string/nav_title_find" />
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/nav_near"
-        android:icon="@drawable/ic_menu_gallery"
-        android:title="@string/nav_title_near" />
+        android:checked="true"
+        android:enabled="true"
+        android:icon="@drawable/ic_menu_home_map_marker"
+        android:title="@string/nav_title_near"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/nav_find"
+        android:enabled="true"
+        android:icon="@drawable/ic_menu_compass"
+        android:title="@string/nav_title_find"
+        app:showAsAction="always" />
 
     <item
         android:id="@+id/nav_mine"
-        android:icon="@drawable/ic_menu_slideshow"
-        android:title="@string/nav_title_mine" />
+        android:enabled="true"
+        android:icon="@drawable/ic_menu_account"
+        android:title="@string/nav_title_mine"
+        app:showAsAction="always" />
 
     <!--<item-->
     <!--android:id="@+id/nav_settings"-->
