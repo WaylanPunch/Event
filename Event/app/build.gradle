@@ -1,16 +1,27 @@
 apply plugin: 'com.android.application'
+apply plugin: 'realm-android'
+//apply plugin: 'android-apt'
 
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.0"
     defaultConfig {
         applicationId "com.way.event"
-        minSdkVersion 17
+        minSdkVersion 21
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+//        jackOptions {
+//            enabled true
+//        }
     }
+
+//    compileOptions {
+//        sourceCompatibility JavaVersion.VERSION_1_8
+//        targetCompatibility JavaVersion.VERSION_1_8
+//    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -32,4 +43,10 @@ dependencies {
     compile files('libs/AMap_Location_V2.4.1_20160414.jar')
     compile files('libs/AMap_Search_V3.5.0_20160927.jar')
     compile files('libs/Volley.jar')
+    //classpath "io.realm:realm-gradle-plugin:2.1.0"
+    //    compile 'com.github.material-foundation.material-remixer-android:remixer_core:develop-SNAPSHOT'
+    //    compile 'com.github.material-foundation.material-remixer-android:remixer_ui:develop-SNAPSHOT'
+    //    compile 'com.github.material-foundation.material-remixer-android:remixer_storage:develop-SNAPSHOT'
+    //    provided 'com.github.material-foundation.material-remixer-android:remixer_annotation:develop-SNAPSHOT'
+    //compile 'com.jakewharton:butterknife:5.1.1'
 }

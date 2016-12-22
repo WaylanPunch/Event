@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.way.event.NearFragment">
+    tools:context="com.way.event.fragment.NearFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
@@ -12,11 +12,14 @@
         android:text="Near" />
 
     <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_near_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_marginBottom="86dip"
-        android:src="@drawable/ic_plus"
+        android:layout_marginBottom="80dip"
         android:layout_marginRight="@dimen/fab_margin"
-        android:elevation="@dimen/fab_margin" />
+        android:background="@drawable/oval_ripple"
+        android:elevation="@dimen/fab_margin"
+        android:src="@drawable/ic_plus"
+        app:pressedTranslationZ="@dimen/fab_margin" />
 </FrameLayout>

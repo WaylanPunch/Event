@@ -7,6 +7,7 @@
         android:checked="true"
         android:enabled="true"
         android:icon="@drawable/ic_menu_home_map_marker"
+        android:orderInCategory="0"
         android:title="@string/nav_title_near"
         app:showAsAction="always" />
 
@@ -14,13 +15,16 @@
         android:id="@+id/nav_find"
         android:enabled="true"
         android:icon="@drawable/ic_menu_compass"
+        android:orderInCategory="1"
         android:title="@string/nav_title_find"
+        
         app:showAsAction="always" />
 
     <item
         android:id="@+id/nav_mine"
         android:enabled="true"
         android:icon="@drawable/ic_menu_account"
+        android:orderInCategory="2"
         android:title="@string/nav_title_mine"
         app:showAsAction="always" />
 
