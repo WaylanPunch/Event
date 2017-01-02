@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:typeface">monospace</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -16,5 +17,27 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="tweetName">
+        <item name="android:textColor">@color/colorTextPrimary</item>
+        <item name="android:textSize">20sp</item>
+        <!--<item name="android:fontFamily">sans-serif-condensed</item>-->
+        <!--<item name="android:textStyle">bold</item>-->
+        <item name="android:shadowColor">@color/colorDivider</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">1</item>
+    </style>
+
+    <style name="tweetText">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColorLink">@color/colorTextSecondary</item>
+    </style>
+
+    <style name="tweetDate">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorTextSecondary</item>
+    </style>
+
 
 </resources>

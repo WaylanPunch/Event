@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GO</string>
+    <string name="app_name">GOU</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -18,4 +18,5 @@
     <string name="title_activity_main2">Main2Activity</string>
     <string name="action_magnify">Search</string>
     <string name="title_activity_add_event">AddEventActivity</string>
+    <string name="network_err">Simulation network error</string>
 </resources>
