@@ -3,16 +3,16 @@
     <color name="colorPrimaryLight">#E1BEE7</color>
     <color name="colorPrimary">#9C27B0</color>
     <color name="colorPrimaryDark">#7B1FA2</color>
-    <color name="colorAccent">#FFC107</color>
+    <color name="colorAccent">#607D8B</color>
+    <color name="colorTextIcons">#FFFFFF</color>
     <color name="colorTextPrimary">#212121</color>
     <color name="colorTextSecondary">#757575</color>
     <color name="colorDivider">#BDBDBD</color>
-    <color name="colorIconsText">#FFFFFF</color>
 
-
-    <color name="colorWhite">@android:color/white</color>
-    <color name="colorBlack">@android:color/black</color>
-    <color name="colorTransparent">@android:color/transparent</color>
-    <color name="bottom_item_text_color">@color/colorPrimaryDark</color>
-    <color name="bottom_item_icon_color">@color/colorPrimary</color>
+    <color name="white">#FFFFFF</color>
+    <color name="teal">#00796B</color>
+    <color name="brown">#8D6E63</color>
+    <color name="blue">#2196F3</color>
+    <color name="grey">#607D8B</color>
+    <color name="orange">#F57C00</color>
 </resources>

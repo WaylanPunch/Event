@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:checked="true"
+        android:icon="@drawable/ic_tab_home_map_marker"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/navigation_find"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/title_find" />
+
+    <item
+        android:id="@+id/navigation_message"
+        android:icon="@drawable/ic_tab_facebook_messenger"
+        android:title="@string/title_message" />
+
+    <item
+        android:id="@+id/navigation_more"
+        android:icon="@drawable/ic_tab_menu"
+        android:title="@string/title_more" />
+
+</menu>

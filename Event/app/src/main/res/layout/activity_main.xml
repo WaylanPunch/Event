@@ -2,10 +2,10 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context="com.way.event.activity.MainActivity">
+    tools:context="com.waylanpunch.event.ui.activities.MainActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -17,22 +17,65 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <RelativeLayout
+                android:elevation="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/colorPrimaryDark">
+
+                <ImageView
+                    android:id="@+id/iv_toolbar_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/text_margin"
+                    android:src="@drawable/ic_plus" />
+
+                <TextView
+                    android:id="@+id/tv_toolbar_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="@dimen/text_margin"
+                    android:gravity="center"
+                    android:text="@string/title_home"
+                    android:textColor="@color/colorTextIcons" />
+
+                <ImageView
+                    android:id="@+id/iv_toolbar_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/text_margin"
+                    android:src="@drawable/ic_search" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
 
     <include layout="@layout/content_main" />
 
+    <!--android:background="?android:attr/windowBackground"-->
     <android.support.design.widget.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
+        android:id="@+id/navigation"
+
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="@color/colorWhite"
-        android:backgroundTint="@color/colorPrimary"
-        android:elevation="@dimen/fab_margin"
-        app:itemIconTint="@color/item_bottom_nav_selector"
-        app:itemTextColor="@color/item_bottom_nav_selector"
-        app:menu="@menu/menu_bottom_navigation_items" />
+        android:background="@color/white"
+        android:elevation="@dimen/bottom_navi_elevation"
+        app:menu="@menu/navigation" />
 
 </android.support.design.widget.CoordinatorLayout>
