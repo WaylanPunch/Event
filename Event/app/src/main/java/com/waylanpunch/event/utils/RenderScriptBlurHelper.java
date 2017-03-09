@@ -63,7 +63,7 @@ public final class RenderScriptBlurHelper {
             output.copyTo(bitmap);
             return bitmap;
         } catch (RSRuntimeException e) {
-            Log.e(TAG, "RenderScript known error : https://code.google.com/p/android/issues/detail?id=71347 "
+            Log.e(TAG, "RenderScript known error : https://code.google.com/p/android/issues/title?id=71347 "
                     + "continue with the FastBlur approach.");
         }
 
