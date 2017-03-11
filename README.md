@@ -6,4 +6,4 @@
 - 2.引入ButterKnife注入式框架
 - 1.已提交首页框架
 
-![image](https://raw.githubusercontent.com/WaylanPunch/Event/master/Capture/device-2017-03-11-171436.png)
+![image](https://raw.githubusercontent.com/WaylanPunch/Event/master/Event/Capture/device-2017-03-11-171436.png)
