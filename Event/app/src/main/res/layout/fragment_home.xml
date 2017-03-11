@@ -2,14 +2,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.waylanpunch.event.ui.fragments.HomeFragment">
+    tools:context="com.waylanpunch.event.view.fragment.HomeFragment">
 
 
-    <com.waylanpunch.event.ui.views.PullLoadMoreRecyclerView
+    <com.waylanpunch.event.widget.PullLoadMoreRecyclerView
         android:id="@+id/pullLoadMoreRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    </com.waylanpunch.event.ui.views.PullLoadMoreRecyclerView>
+    </com.waylanpunch.event.widget.PullLoadMoreRecyclerView>
 
 </FrameLayout>
