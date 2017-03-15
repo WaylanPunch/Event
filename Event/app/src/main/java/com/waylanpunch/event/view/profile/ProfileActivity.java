@@ -1,4 +1,4 @@
-package com.waylanpunch.event.view.activity;
+package com.waylanpunch.event.view.profile;
 
 import android.content.Context;
 import android.os.Build;

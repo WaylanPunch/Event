@@ -1,4 +1,6 @@
-package com.waylanpunch.event.view;
+package com.waylanpunch.event.view.main;
+
+import com.waylanpunch.event.view.base.BaseView;
 
 /**
  * Created by pc on 2017/3/11.

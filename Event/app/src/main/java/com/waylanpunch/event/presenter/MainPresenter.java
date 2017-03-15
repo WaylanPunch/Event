@@ -1,6 +1,6 @@
 package com.waylanpunch.event.presenter;
 
-import com.waylanpunch.event.view.MainView;
+import com.waylanpunch.event.view.main.MainView;
 
 /**
  * Created by pc on 2017/3/11.

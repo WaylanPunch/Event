@@ -9,7 +9,7 @@ import com.waylanpunch.event.presenter.BasePresenter;
  * Created by pc on 2017/3/11.
  */
 
-public abstract class BaseMvpActivity<V,T extends BasePresenter<V>> extends AppCompatActivity {
+public abstract class BaseMVPActivity<V,T extends BasePresenter<V>> extends AppCompatActivity {
 
     public T presenter;
 

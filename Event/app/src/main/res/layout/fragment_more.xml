@@ -2,12 +2,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.waylanpunch.event.view.fragment.MoreFragment">
+    tools:context="com.waylanpunch.event.view.main.MoreFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/tv_more_logoff"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/title_more" />
+        android:text="注销" />
+
+    <TextView
+        android:id="@+id/tv_more_login"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="请先登录" />
 
 </FrameLayout>

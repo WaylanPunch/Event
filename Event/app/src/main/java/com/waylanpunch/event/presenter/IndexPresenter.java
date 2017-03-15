@@ -4,7 +4,7 @@ import android.annotation.SuppressLint;
 import android.os.Handler;
 import android.os.Looper;
 
-import com.waylanpunch.event.view.IndexView;
+import com.waylanpunch.event.view.index.IndexView;
 
 /**
  * Created by pc on 2017/3/11.

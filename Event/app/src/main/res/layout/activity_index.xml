@@ -1,8 +1,9 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.waylanpunch.event.view.activity.IndexActivity">
+    tools:context="com.waylanpunch.event.view.index.IndexActivity">
 
     <!-- The primary full-screen view. This can be replaced with whatever view
          is needed to present your content, e.g. VideoView, SurfaceView,
@@ -14,15 +15,15 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:scaleType="centerCrop"
-        android:src="@drawable/index_wallpaper"
-        android:keepScreenOn="true" />
+        android:keepScreenOn="true"
+        android:src="@drawable/index_wallpaper" />
 
     <!--<android.support.v4.view.ViewPager-->
-        <!--android:id="@+id/fullscreen_content"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:gravity="center"-->
-        <!--android:keepScreenOn="true" />-->
+    <!--android:id="@+id/fullscreen_content"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:gravity="center"-->
+    <!--android:keepScreenOn="true" />-->
 
     <!-- This FrameLayout insets its children based on system windows using
          android:fitsSystemWindows. -->

@@ -4,7 +4,6 @@ import android.app.Application;
 import android.content.Context;
 
 import com.avos.avoscloud.AVOSCloud;
-import com.waylanpunch.event.util.Constants;
 import com.waylanpunch.event.util.FontUtil;
 
 /**
@@ -20,7 +19,7 @@ public final class EventApp extends Application {
         mContext = this;
         FontUtil.setDefaultFont(this, "MONOSPACE", "fonts/HanYiKaiTi.ttf");
         // 初始化参数依次为 this, AppId, AppKey
-        AVOSCloud.initialize(mContext, Constants.LeanCloud_AppID,Constants.LeanCloud_AppKey);
+        AVOSCloud.initialize(mContext, EventConstants.LeanCloud_AppID, EventConstants.LeanCloud_AppKey);
         // 放在 SDK 初始化语句 AVOSCloud.initialize() 后面，只需要调用一次即可
         AVOSCloud.setDebugLogEnabled(true);
     }

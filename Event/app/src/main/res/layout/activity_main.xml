@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.waylanpunch.event.view.activity.MainActivity">
+    tools:context="com.waylanpunch.event.view.main.MainActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -24,11 +24,7 @@
                 android:elevation="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginTop="8dp"
-                android:background="@color/colorPrimaryDark">
+                android:background="@color/colorPrimary">
 
                 <ImageView
                     android:id="@+id/iv_toolbar_add"

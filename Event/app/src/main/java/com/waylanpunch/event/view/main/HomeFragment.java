@@ -1,8 +1,7 @@
-package com.waylanpunch.event.view.fragment;
+package com.waylanpunch.event.view.main;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
@@ -12,21 +11,24 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.waylanpunch.event.R;
-import com.waylanpunch.event.adapters.RecyclerViewAdapter;
+import com.waylanpunch.event.adapters.HomeAdapter;
+import com.waylanpunch.event.model.PostModel;
+import com.waylanpunch.event.presenter.HomePresenter;
+import com.waylanpunch.event.util.ToastUtil;
+import com.waylanpunch.event.view.base.BaseMVPFragment;
 import com.waylanpunch.event.widget.PullLoadMoreRecyclerView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link com.waylanpunch.event.view.fragment.OnFragmentInteractionListener} interface
+ * {@link OnFragmentInteractionListener} interface
  * to handle interaction events.
  * Use the {@link HomeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class HomeFragment extends Fragment implements PullLoadMoreRecyclerView.PullLoadMoreListener {
+public class HomeFragment extends BaseMVPFragment<HomeView, HomePresenter> implements HomeView, PullLoadMoreRecyclerView.PullLoadMoreListener {
     private static final String TAG = HomeFragment.class.getName();
 
     private static final String ARG_PARAM1 = "param1";
@@ -40,7 +42,7 @@ public class HomeFragment extends Fragment implements PullLoadMoreRecyclerView.P
 
     private PullLoadMoreRecyclerView mPullLoadMoreRecyclerView;
     private int mCount = 1;
-    private RecyclerViewAdapter mRecyclerViewAdapter;
+    private HomeAdapter mRecyclerViewAdapter;
     private RecyclerView mRecyclerView;
     //Fragment的View加载完毕的标记
     private boolean isViewCreated;
@@ -49,6 +51,7 @@ public class HomeFragment extends Fragment implements PullLoadMoreRecyclerView.P
     private boolean isUIVisible;
 
     public HomeFragment() {
+        super();
         Log.i(TAG, "Required empty public constructor");
     }
 
@@ -94,6 +97,10 @@ public class HomeFragment extends Fragment implements PullLoadMoreRecyclerView.P
         Log.i(TAG, "onViewCreated");
         isViewCreated = true;
 
+        initPullLoadRecyclerView(view);
+    }
+
+    private void initPullLoadRecyclerView(View view) {
         mPullLoadMoreRecyclerView = (PullLoadMoreRecyclerView) view.findViewById(R.id.pullLoadMoreRecyclerView);
         //获取mRecyclerView对象
         mRecyclerView = mPullLoadMoreRecyclerView.getRecyclerView();
@@ -116,27 +123,28 @@ public class HomeFragment extends Fragment implements PullLoadMoreRecyclerView.P
         mPullLoadMoreRecyclerView.setLinearLayout();
 
         mPullLoadMoreRecyclerView.setOnPullLoadMoreListener(this);
-        mRecyclerViewAdapter = new RecyclerViewAdapter(getActivity());
+        mRecyclerViewAdapter = new HomeAdapter(getActivity());
         mPullLoadMoreRecyclerView.setAdapter(mRecyclerViewAdapter);
-        lazyLoad();
+        //lazyLoad();
         //getData();
     }
 
-    private void lazyLoad() {
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                getActivity().runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        mRecyclerViewAdapter.addAllData(setList());
-                        mPullLoadMoreRecyclerView.setPullLoadMoreCompleted();
-                    }
-                });
-
-            }
-        }, 1000);
-    }
+//    private void lazyLoad() {
+//        Log.i(TAG, "lazyLoad");
+//        new Handler().postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                getActivity().runOnUiThread(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        mRecyclerViewAdapter.addAllData(setList());
+//                        mPullLoadMoreRecyclerView.setPullLoadMoreCompleted();
+//                    }
+//                });
+//
+//            }
+//        }, 1000);
+//    }
 
 
     public void clearData() {
@@ -145,28 +153,30 @@ public class HomeFragment extends Fragment implements PullLoadMoreRecyclerView.P
     }
 
 
-    private List<String> setList() {
-        List<String> dataList = new ArrayList<>();
-        int start = 20 * (mCount - 1);
-        for (int i = start; i < 20 * mCount; i++) {
-            dataList.add("Frist" + i);
-        }
-        return dataList;
-
-    }
+//    private List<String> setList() {
+//        List<String> dataList = new ArrayList<>();
+//        int start = 20 * (mCount - 1);
+//        for (int i = start; i < 20 * mCount; i++) {
+//            dataList.add("Frist" + i);
+//        }
+//        return dataList;
+//
+//    }
 
     @Override
     public void onRefresh() {
         Log.i(TAG, "onRefresh");
-        setRefresh();
-        lazyLoad();
+//        setRefresh();
+//        lazyLoad();
+        presenter.swipeRefresh(20);
     }
 
     @Override
     public void onLoadMore() {
         Log.i(TAG, "onLoadMore");
-        mCount = mCount + 1;
-        lazyLoad();
+        //mCount = mCount + 1;
+        //lazyLoad();
+        presenter.swipeLoad(20);
     }
 
     private void setRefresh() {
@@ -188,7 +198,8 @@ public class HomeFragment extends Fragment implements PullLoadMoreRecyclerView.P
         //isVisibleToUser这个boolean值表示:该Fragment的UI 用户是否可见
         if (isVisibleToUser) {
             isUIVisible = true;
-            lazyLoad();
+            //lazyLoad();
+            presenter.swipeRefresh(20);
         } else {
             isUIVisible = false;
         }
@@ -213,5 +224,59 @@ public class HomeFragment extends Fragment implements PullLoadMoreRecyclerView.P
         mListener = null;
     }
 
+    @Override
+    public HomePresenter initPresenter() {
+        return new HomePresenter();
+    }
 
+
+    @Override
+    public void showLoading() {
+
+    }
+
+    @Override
+    public void hideLoading() {
+
+    }
+
+    @Override
+    public void onSwipeRefreshSuccess(final List<PostModel> result) {
+        mRecyclerViewAdapter.clearData();
+        mCount = 1;
+        getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                mRecyclerViewAdapter.addAllData(result);
+                mPullLoadMoreRecyclerView.setPullLoadMoreCompleted();
+            }
+        });
+    }
+
+    @Override
+    public void onSwipeRefreshFailed(String message) {
+        ToastUtil.showLongToast(message);
+    }
+
+    @Override
+    public void onSwipeLoadSuccess(final List<PostModel> result) {
+        mCount = mCount + 1;
+        getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                mRecyclerViewAdapter.addAllData(result);
+                mPullLoadMoreRecyclerView.setPullLoadMoreCompleted();
+            }
+        });
+    }
+
+    @Override
+    public void onSwipeLoadFailed(String message) {
+        ToastUtil.showLongToast(message);
+    }
+
+    @Override
+    public void showMessage(String message) {
+
+    }
 }

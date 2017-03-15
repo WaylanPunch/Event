@@ -1,4 +1,4 @@
-package com.waylanpunch.event.view;
+package com.waylanpunch.event.view.base;
 
 /**
  * Created by pc on 2017/3/11.

@@ -1,36 +1,34 @@
-package com.waylanpunch.event.view.fragment;
+package com.waylanpunch.event.view.main;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.waylanpunch.event.R;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link com.waylanpunch.event.view.fragment.OnFragmentInteractionListener} interface
+ * {@link OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link MoreFragment#newInstance} factory method to
+ * Use the {@link FindFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class MoreFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+public class FindFragment extends Fragment {
+    private static final String TAG = FindFragment.class.getName();
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
     private OnFragmentInteractionListener mListener;
 
-    public MoreFragment() {
-        // Required empty public constructor
+    public FindFragment() {
+        Log.i(TAG, "FindFragment,Required empty public constructor");
+
     }
 
     /**
@@ -39,11 +37,10 @@ public class MoreFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment MoreFragment.
+     * @return A new instance of fragment FindFragment.
      */
-    // TODO: Rename and change types and number of parameters
-    public static MoreFragment newInstance(String param1, String param2) {
-        MoreFragment fragment = new MoreFragment();
+    public static FindFragment newInstance(String param1, String param2) {
+        FindFragment fragment = new FindFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -54,6 +51,7 @@ public class MoreFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.i(TAG, "onCreate");
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -63,19 +61,39 @@ public class MoreFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_more, container, false);
+        Log.i(TAG, "onCreateView,Inflate the layout for this fragment");
+        View view = inflater.inflate(R.layout.fragment_find, container, false);
+
+        return view;
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        Log.i(TAG, "onViewCreated");
+    }
+
+
     public void onButtonPressed(Bundle bundle) {
+        Log.i(TAG, "onButtonPressed,update argument and hook method into UI event");
         if (mListener != null) {
-            mListener.onFragmentInteraction(R.id.navigation_more, bundle);
+            mListener.onFragmentInteraction(R.id.navigation_find, bundle);
         }
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+    }
+
+    @Override
     public void onAttach(Context context) {
+        Log.i(TAG, "onAttach");
         super.onAttach(context);
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
@@ -87,6 +105,7 @@ public class MoreFragment extends Fragment {
 
     @Override
     public void onDetach() {
+        Log.i(TAG, "onDetach");
         super.onDetach();
         mListener = null;
     }
@@ -105,4 +124,5 @@ public class MoreFragment extends Fragment {
 //        // TODO: Update argument type and name
 //        void onFragmentInteraction(Uri uri);
 //    }
+
 }

@@ -1,17 +1,14 @@
-package com.waylanpunch.event.view.activity;
+package com.waylanpunch.event.view.index;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 
 import com.waylanpunch.event.R;
 import com.waylanpunch.event.presenter.IndexPresenter;
-import com.waylanpunch.event.view.IndexView;
-import com.waylanpunch.event.view.base.BaseMvpActivity;
+import com.waylanpunch.event.view.main.MainActivity;
+import com.waylanpunch.event.view.base.BaseMVPActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -20,7 +17,7 @@ import butterknife.ButterKnife;
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-public class IndexActivity extends BaseMvpActivity<IndexView,IndexPresenter> implements IndexView {
+public class IndexActivity extends BaseMVPActivity<IndexView,IndexPresenter> implements IndexView {
     private final static String TAG = IndexActivity.class.getName();
 
     @BindView(R.id.fullscreen_content_controls)

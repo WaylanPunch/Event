@@ -55,6 +55,7 @@
             android:text="A big event" />
 
         <TextView
+            android:id="@+id/tv_item_event_description"
             style="@style/NormalTextSecondaryStyle"
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"

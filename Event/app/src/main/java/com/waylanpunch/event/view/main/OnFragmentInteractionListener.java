@@ -1,4 +1,4 @@
-package com.waylanpunch.event.view.fragment;
+package com.waylanpunch.event.view.main;
 
 import android.os.Bundle;
 

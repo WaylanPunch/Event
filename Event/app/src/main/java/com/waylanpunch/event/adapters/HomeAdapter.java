@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.waylanpunch.event.R;
+import com.waylanpunch.event.model.PostModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,13 +17,13 @@ import java.util.List;
  * Created by pc on 2017/3/9.
  */
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
+public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
 
     private Context mContext;
-    private List<String> dataList = new ArrayList<>();
+    private List<PostModel> dataList = new ArrayList<>();
 
 
-    public void addAllData(List<String> dataList) {
+    public void addAllData(List<PostModel> dataList) {
         this.dataList.addAll(dataList);
         notifyDataSetChanged();
     }
@@ -31,16 +32,20 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         this.dataList.clear();
     }
 
-    public RecyclerViewAdapter(Context context) {
+    public HomeAdapter(Context context) {
         mContext = context;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+        public TextView nickname;
         public TextView title;
+        public TextView description;
 
         public ViewHolder(View itemView) {
             super(itemView);
+            nickname = (TextView) itemView.findViewById(R.id.tv_item_event_nickname);
             title = (TextView) itemView.findViewById(R.id.tv_item_event_title);
+            description = (TextView) itemView.findViewById(R.id.tv_item_event_description);
         }
     }
 
@@ -52,7 +57,18 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
-        holder.title.setText(dataList.get(position));
+        String strNickname = dataList.get(position).getNickname();
+        if (!strNickname.equals("")) {
+            holder.nickname.setText(strNickname);
+        }
+        String strTitle = dataList.get(position).getTitle();
+        if (!strTitle.equals("")) {
+            holder.title.setText(strTitle);
+        }
+        String strDescription = dataList.get(position).getDescription();
+        if (!strDescription.equals("")) {
+            holder.description.setText(strDescription);
+        }
     }
 
     @Override

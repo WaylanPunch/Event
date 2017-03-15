@@ -1,4 +1,4 @@
-package com.waylanpunch.event.view.activity;
+package com.waylanpunch.event.view.main;
 
 import android.content.Context;
 import android.content.Intent;
@@ -19,22 +19,18 @@ import android.widget.TextView;
 
 import com.waylanpunch.event.R;
 import com.waylanpunch.event.presenter.MainPresenter;
-import com.waylanpunch.event.util.Constants;
+import com.waylanpunch.event.EventConstants;
 import com.waylanpunch.event.adapters.MainFragmentPagerAdapter;
-import com.waylanpunch.event.view.MainView;
-import com.waylanpunch.event.view.base.BaseMvpActivity;
-import com.waylanpunch.event.view.fragment.FindFragment;
-import com.waylanpunch.event.view.fragment.HomeFragment;
-import com.waylanpunch.event.view.fragment.MessageFragment;
-import com.waylanpunch.event.view.fragment.MoreFragment;
-import com.waylanpunch.event.view.fragment.OnFragmentInteractionListener;
+import com.waylanpunch.event.view.newpost.NewPostActivity;
+import com.waylanpunch.event.view.profile.ProfileActivity;
+import com.waylanpunch.event.view.base.BaseMVPActivity;
 import com.waylanpunch.event.widget.BottomNavigationViewHelper;
 import com.waylanpunch.event.util.ToastUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends BaseMvpActivity<MainView, MainPresenter> implements MainView, OnFragmentInteractionListener {
+public class MainActivity extends BaseMVPActivity<MainView, MainPresenter> implements MainView, OnFragmentInteractionListener {
     private final static String TAG = MainActivity.class.getName();
 
     @BindView(R.id.toolbar)
@@ -194,7 +190,7 @@ public class MainActivity extends BaseMvpActivity<MainView, MainPresenter> imple
     public void startAnotherActivity(int id) {
         switch (id) {
             case R.id.iv_toolbar_add:
-                Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+                Intent intent = new Intent(MainActivity.this, NewPostActivity.class);
                 startActivity(intent);
                 break;
             case R.id.tv_toolbar_title:
@@ -230,7 +226,7 @@ public class MainActivity extends BaseMvpActivity<MainView, MainPresenter> imple
     public void onFragmentInteraction(int tabId, Bundle bundle) {
         if (tabId == R.id.navigation_find) {
             if (bundle != null) {
-                String msg = bundle.getString(Constants.Action_Message);
+                String msg = bundle.getString(EventConstants.Action_Message);
                 ToastUtil.showShortToast(msg);
             }
         }
