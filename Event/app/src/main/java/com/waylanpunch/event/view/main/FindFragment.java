@@ -8,7 +8,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
+
 import com.waylanpunch.event.R;
+import com.waylanpunch.event.widget.CycleViewPagerFragment;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,6 +30,8 @@ public class FindFragment extends Fragment {
     private String mParam1;
     private String mParam2;
     private OnFragmentInteractionListener mListener;
+
+    private FrameLayout fl_content;
 
     public FindFragment() {
         Log.i(TAG, "FindFragment,Required empty public constructor");
@@ -61,16 +68,32 @@ public class FindFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        Log.i(TAG, "onCreateView,Inflate the layout for this fragment");
-        View view = inflater.inflate(R.layout.fragment_find, container, false);
-
-        return view;
+        return inflater.inflate(R.layout.fragment_find, container, false);
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         Log.i(TAG, "onViewCreated");
+        initView(view);
+    }
+
+    private void initView(View view) {
+        ArrayList<Integer> imageIds = new ArrayList<Integer>();
+        imageIds.add(R.drawable.a);
+        imageIds.add(R.drawable.b);
+        imageIds.add(R.drawable.c);
+        imageIds.add(R.drawable.d);
+        imageIds.add(R.drawable.e);
+        ArrayList<String> titles = new ArrayList<String>();
+        titles.add("巩俐不低俗，我就不能低俗");
+        titles.add("扑树又回来啦！再唱经典老歌引万人大合唱");
+        titles.add("揭秘北京电影如");
+        titles.add("乐视网TV版大派送");
+        titles.add("热血屌丝的反杀");
+
+        CycleViewPagerFragment cycleViewPagerFragment = CycleViewPagerFragment.newInstance(imageIds, titles);
+        getChildFragmentManager().beginTransaction().add(R.id.fl_content, cycleViewPagerFragment).commit();
     }
 
 

@@ -11,14 +11,25 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.waylanpunch.event.R;
 
-public class NewPostActivity extends AppCompatActivity {
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
+public class NewPostActivity extends BaseSwipeActivity {
 
     private Context context;
-    Toolbar toolbar;
-    FloatingActionButton fab;
+    @BindView(R.id.toolbar)
+    public Toolbar toolbar;
+    @BindView(R.id.iv_toolbar_back)
+    public ImageView toolbarBack;
+    @BindView(R.id.iv_toolbar_send)
+    public ImageView toolbarSend;
+    @BindView(R.id.tv_toolbar_title)
+    public TextView toolbarTitle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,10 +37,11 @@ public class NewPostActivity extends AppCompatActivity {
         initParams();
         initToolbar();
         initSystemBar();
-        initFloatingActionButton();
+//        initFloatingActionButton();
     }
 
     private void initParams() {
+        ButterKnife.bind(this);
         context = this;
     }
 
@@ -47,14 +59,14 @@ public class NewPostActivity extends AppCompatActivity {
         }
     }
 
-    private void initFloatingActionButton() {
-        fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-    }
+//    private void initFloatingActionButton() {
+//        fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
+//    }
 }

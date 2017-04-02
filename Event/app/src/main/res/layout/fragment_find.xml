@@ -1,17 +1,22 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.waylanpunch.event.view.main.FindFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/tv_find_logo"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_gravity="center"
-        android:background="@color/blue"
-        android:gravity="center"
-        android:text="@string/title_find" />
+    <FrameLayout
+        android:id="@+id/fl_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+    </FrameLayout>
+
+    <include layout="@layout/layout_event_category"></include>
+
+    <com.waylanpunch.event.widget.PullLoadMoreRecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </com.waylanpunch.event.widget.PullLoadMoreRecyclerView>
+</LinearLayout>

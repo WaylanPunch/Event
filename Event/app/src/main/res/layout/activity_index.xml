@@ -14,8 +14,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:scaleType="centerCrop"
         android:keepScreenOn="true"
+        android:scaleType="centerCrop"
         android:src="@drawable/index_wallpaper" />
 
     <!--<android.support.v4.view.ViewPager-->
@@ -48,6 +48,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@android:color/transparent"
                 android:text="@string/enter_app" />
 
         </LinearLayout>

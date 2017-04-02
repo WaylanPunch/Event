@@ -24,6 +24,7 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
--keep class com.chad.library.adapter.** {
-   *;
+-dontwarn com.tencent.bugly.**
+-keep public class com.tencent.bugly.**{
+    *;
 }

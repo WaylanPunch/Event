@@ -16,6 +16,7 @@ public abstract class BaseMVPActivity<V,T extends BasePresenter<V>> extends AppC
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        android.os.Debug.startMethodTracing("Event");
         presenter = initPresenter();
     }
 
@@ -28,6 +29,7 @@ public abstract class BaseMVPActivity<V,T extends BasePresenter<V>> extends AppC
     @Override
     protected void onDestroy() {
         presenter.dettach();
+        android.os.Debug.stopMethodTracing();
         super.onDestroy();
     }
 

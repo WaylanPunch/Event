@@ -118,4 +118,5 @@
     <string name="title_activity_new_post">NewPostActivity</string>
     <string name="hint_please_input_content">请输入正文</string>
     <string name="hint_please_input_title">请输入标题</string>
+    <string name="title_edit">编辑</string>
 </resources>

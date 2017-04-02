@@ -9,55 +9,59 @@
     tools:context="com.waylanpunch.event.view.newpost.NewPostActivity"
     tools:showIn="@layout/activity_new_post">
 
-    <android.support.v7.widget.CardView
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/recyclerview_item_space">
+        android:layout_height="100dp"
+        android:layout_margin="@dimen/recyclerview_item_space"
+        android:background="@drawable/bg_photo_selector">
 
         <ImageView
             android:id="@+id/iv_post_background"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/recyclerview_item_space"
-            app:srcCompat="@drawable/default_photo" />
-    </android.support.v7.widget.CardView>
+            android:layout_height="match_parent"
+            android:layout_gravity="center" />
 
-    <android.support.v7.widget.CardView
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawableLeft="@drawable/ic_folder_image_grey600_24dp"
+            android:gravity="center"
+            android:text="添加封面" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="0px"
+        android:layout_height="0px"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+        <requestFocus />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/et_post_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/recyclerview_item_space"
+        android:background="@null"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/hint_please_input_title"
+        android:inputType="textPersonName"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/et_post_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="@dimen/recyclerview_item_space">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <EditText
-                android:id="@+id/et_post_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/recyclerview_item_space"
-                android:background="@null"
-                android:ems="10"
-                android:hint="@string/hint_please_input_title"
-                android:inputType="textPersonName"
-                android:textSize="18sp" />
-
-            <EditText
-                android:id="@+id/et_post_content"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/recyclerview_item_space"
-                android:background="@null"
-                android:ems="10"
-                android:gravity="start"
-                android:hint="@string/hint_please_input_content"
-                android:inputType="textPersonName"
-                android:minLines="3"
-                android:text="@string/large_text"
-                android:textAlignment="textStart"
-                android:textSize="14sp" />
-        </LinearLayout>
-
-    </android.support.v7.widget.CardView>
+        android:layout_margin="@dimen/recyclerview_item_space"
+        android:background="@null"
+        android:ems="10"
+        android:gravity="start"
+        android:hint="@string/hint_please_input_content"
+        android:inputType="textMultiLine"
+        android:text="@string/large_text"
+        android:textAlignment="textStart"
+        android:textSize="18sp" />
 </LinearLayout>
